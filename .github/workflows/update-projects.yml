@@ -15,17 +15,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Create data folder
+        run: mkdir -p data
+
       - name: Fetch repositories
         run: |
           curl -s "https://api.github.com/users/silentwolfproject/repos?per_page=100&sort=updated" \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -o /tmp/repos.json
-          jq '{updated_at: (now | todate), repos: [.[] | {name, description, url: .html_url, language, stars: .stargazers_count, forks: .forks_count, updated: .updated_at, topics}]}' /tmp/repos.json > data/projects.json
+
+      - name: Filter and transform
+        run: |
+          if jq -e 'type == "array"' /tmp/repos.json > /dev/null 2>&1; then
+            jq '{updated_at: (now | todate), repos: [.[] | select(.name != "silentwolfproject.github.io") | {name, description, url: .html_url, language, stars: .stargazers_count, forks: .forks_count, updated: .updated_at, topics}]}' /tmp/repos.json > data/projects.json
+          else
+            echo '{"updated_at": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'", "repos": []}' > data/projects.json
+          fi
+          cat data/projects.json
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/projects.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update projects data"
-          git push
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update projects data"
+            git push
+          fi
