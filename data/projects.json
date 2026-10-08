@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-10-07T00:22:57Z",
+  "updated_at": "2026-10-08T00:21:38Z",
   "repos": [
+    {
+      "name": "swpreq-py",
+      "description": "High-performance HTTP client for Python with a Rust core.",
+      "url": "https://github.com/silentwolfproject/swpreq-py",
+      "language": "Python",
+      "stars": 2,
+      "forks": 0,
+      "updated": "2026-10-07T13:55:28Z",
+      "topics": []
+    },
     {
       "name": "onewayswp-py",
       "description": "onewayswp - Create an offline-based licensing program.",
@@ -8,7 +18,7 @@
       "language": "Python",
       "stars": 2,
       "forks": 0,
-      "updated": "2026-10-06T07:36:01Z",
+      "updated": "2026-10-07T08:34:32Z",
       "topics": []
     },
     {
