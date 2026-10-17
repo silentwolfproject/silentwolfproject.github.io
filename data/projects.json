@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-10-16T00:29:00Z",
+  "updated_at": "2026-10-17T00:30:13Z",
   "repos": [
+    {
+      "name": "silentwolfproject",
+      "description": null,
+      "url": "https://github.com/silentwolfproject/silentwolfproject",
+      "language": null,
+      "stars": 2,
+      "forks": 0,
+      "updated": "2026-10-16T03:23:20Z",
+      "topics": []
+    },
     {
       "name": "swpreq-py",
       "description": "High-performance HTTP client for Python with a Rust core.",
@@ -19,16 +29,6 @@
       "stars": 2,
       "forks": 0,
       "updated": "2026-10-07T08:34:32Z",
-      "topics": []
-    },
-    {
-      "name": "silentwolfproject",
-      "description": null,
-      "url": "https://github.com/silentwolfproject/silentwolfproject",
-      "language": null,
-      "stars": 1,
-      "forks": 0,
-      "updated": "2026-10-01T17:08:24Z",
       "topics": []
     }
   ]
