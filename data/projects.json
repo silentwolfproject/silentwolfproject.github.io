@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-24T09:04:50Z",
+  "updated_at": "2026-11-25T07:42:05Z",
   "repos": [
+    {
+      "name": "onewayswp-core",
+      "description": null,
+      "url": "https://github.com/silentwolfproject/onewayswp-core",
+      "language": "Rust",
+      "stars": 1,
+      "forks": 0,
+      "updated": "2026-11-24T14:06:35Z",
+      "topics": []
+    },
+    {
+      "name": "swpreq-core",
+      "description": null,
+      "url": "https://github.com/silentwolfproject/swpreq-core",
+      "language": "Rust",
+      "stars": 1,
+      "forks": 0,
+      "updated": "2026-11-24T14:05:15Z",
+      "topics": []
+    },
     {
       "name": "onewayswp-py",
       "description": "onewayswp - Create an offline-based licensing program.",
